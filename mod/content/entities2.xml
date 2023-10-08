@@ -1,0 +1,5 @@
+<entities anm2root="gfx/" version="5" >
+    <entity anm2path="nightmareGaze.anm2" baseHP="100" boss="1" champion="0" collisionDamage="0" collisionMass="75" collisionRadius="20" friction="1" id="959" name="NightmaresGaze" shadowSize="0" stageHP="0" variant="101">
+        <gibs amount="1" blood="0" bone="1" eye="1" gut="0" large="1" />
+    </entity>
+</entities>

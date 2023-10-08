@@ -1,20 +1,18 @@
+import type { EntityType } from "isaac-typescript-definitions";
 import { ModCallback } from "isaac-typescript-definitions";
 
 const MOD_NAME = "doomed-mod";
 
-// This function is run when your mod first initializes.
 export function main(): void {
-  // Instantiate a new mod object, which grants the ability to add callback functions that
-  // correspond to in-game events.
   const mod = RegisterMod(MOD_NAME, 1);
+  const NIGHTMARES_GAZE: EntityType =
+    Isaac.GetEntityTypeByName("NightmaresGaze");
 
-  // Register a callback function that corresponds to when a new player is initialized.
-  mod.AddCallback(ModCallback.POST_PLAYER_INIT, postPlayerInit);
-
-  // Print a message to the "log.txt" file.
-  Isaac.DebugString(`${MOD_NAME} initialized.`);
+  mod.AddCallback(
+    ModCallback.POST_NPC_UPDATE,
+    nightmareGazeAI,
+    NIGHTMARES_GAZE,
+  );
 }
 
-function postPlayerInit() {
-  Isaac.DebugString("Callback fired: POST_PLAYER_INIT");
-}
+function nightmareGazeAI(NPC: EntityType) {}
